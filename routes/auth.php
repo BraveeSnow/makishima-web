@@ -16,7 +16,7 @@ Route::get('/auth/callback', function () {
         [
             'token' => $user->token,
             'refresh_token' => $user->refreshToken,
-            'expires_in' => time() + (int)$user->expiresIn,
+            'expires_in' => DateTime::createFromTimestamp(time() + (int)$user->expiresIn),
         ],
     );
 

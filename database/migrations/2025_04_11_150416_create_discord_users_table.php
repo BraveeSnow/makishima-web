@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigInteger('id')->primary();
             $table->string('token')->unique();
             $table->string('refresh_token')->unique();
-            $table->bigInteger('expires_in');
+            $table->dateTime('expires_in');
             $table->timestamps();
         });
     }
